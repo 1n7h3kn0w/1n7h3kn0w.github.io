@@ -1,1 +1,0 @@
-# JustATechNerd.github.io
