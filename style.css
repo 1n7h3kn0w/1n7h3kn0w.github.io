@@ -3,8 +3,10 @@ body {
 }
 p {
   color: white;
+	font-size: 2rem;
 }
 h1 {
   font-weight: bold;
 	color: white;
+	font-size: 1rem;
 }
