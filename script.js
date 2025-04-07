@@ -15,12 +15,22 @@ if (name) {
   greeting.textContent = "Hello, stranger!";
 }
 //=========================================================================
-//AI code quarantine
-
+//more differant AI code
+// Get the user agent string
 var test = navigator.userAgent;
-if (test) {
-  test.textContent = `${test}`;
+
+// Find the element where you want to display the result (e.g., a <p> with id="userAgentDisplay")
+var displayElement = document.getElementById("userAgentDisplay");
+
+if (displayElement) {
+  // If the element exists, update the text content with the user agent string
+  if (test) {
+    displayElement.textContent = `Your User Agent is: ${test}`;
+  } else {
+    displayElement.textContent = "Something is broken, sorry but my code sucks.";
+  }
+} else {
+  console.log("Element with id 'userAgentDisplay' not found!");
 }
-else {
-  test.textContent = `Something is broken, sorry but my code sucks.`;
-}
+//========================================================================
+//AI code quarantine
