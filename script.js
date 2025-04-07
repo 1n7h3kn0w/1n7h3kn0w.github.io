@@ -17,10 +17,10 @@ if (name) {
 //=========================================================================
 //AI code quarantine
 
-var test = navigator.userAgent
+var test = navigator.userAgent;
 if (test) {
-  test.textContent = `${test}`
+  test.textContent = `${test}`;
 }
 else {
-  test.textContent = `Something is broken, sorry but my code sucks.`
+  test.textContent = `Something is broken, sorry but my code sucks.`;
 }
