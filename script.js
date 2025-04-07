@@ -20,7 +20,7 @@ if (name) {
 var test = navigator.userAgent;
 
 // Find the element where you want to display the result (e.g., a <p> with id="userAgentDisplay")
-var displayElement = document.getElementById("userAgentDisplay");
+var displayElement = document.getElementById("test");
 
 if (displayElement) {
   // If the element exists, update the text content with the user agent string
