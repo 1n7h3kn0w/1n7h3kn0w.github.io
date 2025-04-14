@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', () => {
   let userName = getQueryParam('name');
 
   if (userName) {
-    setCookie('userName', userName, 1); // Store for 1 day
+    setCookie('userName', userName, 30); // Store for 30 days
   } else {
     userName = getCookie('userName');
   }
@@ -81,5 +81,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
 
 //=============================================================================================
