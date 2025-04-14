@@ -34,3 +34,18 @@ if (displayElement) {
 }
 //========================================================================
 //AI code quarantine
+
+
+
+//This is also AI code but caleb kind of looked over it so it should be good
+//=============================================================================================
+
+window.addEventListener('DOMContentLoaded', () => {
+  let name = getQueryParam('name');
+
+  if (name) {
+    setCookie('name', name, 30); // Store for 30 days
+  } else {
+    name = getCookie('name');
+  }
+//=============================================================================================
