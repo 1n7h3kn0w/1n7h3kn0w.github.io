@@ -48,4 +48,10 @@ window.addEventListener('DOMContentLoaded', () => {
   } else {
     name = getCookie('name');
   }
+
+  if (name) {
+    document.getElementById('debug1').textContent = `Hello, ${name}!`;
+  }
+});
+
 //=============================================================================================
