@@ -44,7 +44,7 @@ const test = Testparams.get("test");
 const HW = document.getElementById("HW");
 
 if (test) {
-  greeting.textContent = `Hello, ${test}!`;
+  HW.textContent = `Hello, ${test}!`;
 } else {
-  greeting.textContent = "Hello, stranger!";
+  HW.textContent = "WHO YOU IS!";
 }
