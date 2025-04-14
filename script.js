@@ -4,13 +4,13 @@
 //=========================================================================
 // Grab URL parameters
 const params = new URLSearchParams(window.location.search);
-const name = params.get("name");
+const name = params.get("UserName");
 
 // Update the page
 const greeting = document.getElementById("greeting");
 
 if (name) {
-  greeting.textContent = `Hello, ${name}!`;
+  greeting.textContent = `Hello, ${UserName}!`;
 }
 } else {
   greeting.textContent = "Hello, stranger!";
