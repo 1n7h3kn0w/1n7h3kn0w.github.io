@@ -6,11 +6,25 @@
 const params = new URLSearchParams(window.location.search);
 const name = params.get("name");
 
+function getCookieValue(name) {
+  const cookies = document.cookie.split("; ");
+  for (const cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === name) {
+      return decodeURIComponent(value);
+    }
+  }
+  return null;
+}
+
 // Update the page
 const greeting = document.getElementById("greeting");
 
 if (name) {
   greeting.textContent = `Hello, ${name}!`;
+elif (Document.cookie.includes("userName")) {
+  greeting.textContent = `Hello, ${name}!`;
+}
 } else {
   greeting.textContent = "Hello, stranger!";
 }
@@ -34,53 +48,3 @@ if (displayElement) {
 }
 //========================================================================
 //AI code quarantine
-
-
-
-//This is also AI code but caleb kind of looked over it so it should be good
-//=============================================================================================
-
-// Function to get a query parameter by name
-function getQueryParam(param) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(param);
-}
-
-// Function to set a cookie
-function setCookie(key, value, days) {
-  const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${key}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
-}
-
-// Function to get a cookie by name
-function getCookie(key) {
-  const cookies = document.cookie.split('; ');
-  for (let i = 0; i < cookies.length; i++) {
-    const [cookieKey, cookieValue] = cookies[i].split('=');
-    if (cookieKey === key) {
-      return decodeURIComponent(cookieValue);
-    }
-  }
-  return null;
-}
-
-// Main function to set the debug text
-window.addEventListener('DOMContentLoaded', () => {
-  let userName = getQueryParam('name');
-
-  if (userName) {
-    setCookie('userName', userName, 30); // Store for 30 days
-  } else {
-    userName = getCookie('userName');
-  }
-
-  if (userName) {
-    const debugElement = document.getElementById('debug1');
-    if (debugElement) {
-      debugElement.textContent = `Hello, ${userName}!`;
-    }
-  }
-});
-
-
-//=============================================================================================
