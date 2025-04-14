@@ -6,23 +6,10 @@
 const params = new URLSearchParams(window.location.search);
 const name = params.get("name");
 
-function getCookieValue(name) {
-  const cookies = document.cookie.split("; ");
-  for (const cookie of cookies) {
-    const [key, value] = cookie.split("=");
-    if (key === name) {
-      return decodeURIComponent(value);
-    }
-  }
-  return null;
-}
-
 // Update the page
 const greeting = document.getElementById("greeting");
 
 if (name) {
-  greeting.textContent = `Hello, ${name}!`;
-elif (Document.cookie.includes("userName")) {
   greeting.textContent = `Hello, ${name}!`;
 }
 } else {
