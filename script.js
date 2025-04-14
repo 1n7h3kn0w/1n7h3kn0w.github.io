@@ -40,17 +40,45 @@ if (displayElement) {
 //This is also AI code but caleb kind of looked over it so it should be good
 //=============================================================================================
 
-window.addEventListener('DOMContentLoaded', () => {
-  let name = getQueryParam('name');
+// Function to get a query parameter by name
+function getQueryParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
 
-  if (name) {
-    setCookie('User', name, 1); // Store for 1 day
+// Function to set a cookie
+function setCookie(key, value, days) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${key}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+}
+
+// Function to get a cookie by name
+function getCookie(key) {
+  const cookies = document.cookie.split('; ');
+  for (let i = 0; i < cookies.length; i++) {
+    const [cookieKey, cookieValue] = cookies[i].split('=');
+    if (cookieKey === key) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+  return null;
+}
+
+// Main function to set the debug text
+window.addEventListener('DOMContentLoaded', () => {
+  let userName = getQueryParam('name');
+
+  if (userName) {
+    setCookie('userName', userName, 1); // Store for 1 day
   } else {
-    name = getCookie('User');
+    userName = getCookie('userName');
   }
 
-  if (name) {
-    document.getElementById('greeting').textContent = `Hello, ${name}!`;
+  if (userName) {
+    const debugElement = document.getElementById('debug1');
+    if (debugElement) {
+      debugElement.textContent = `Hello, ${userName}!`;
+    }
   }
 });
 
