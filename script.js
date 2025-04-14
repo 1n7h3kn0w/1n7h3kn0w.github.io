@@ -34,3 +34,17 @@ if (displayElement) {
 }
 //========================================================================
 //AI code quarantine
+
+//This is a test using AI code that works
+
+const Testparams = new URLSearchParams(window.location.search);
+const test = Testparams.get("test");
+
+// Update the page
+const HW = document.getElementById("HW");
+
+if (test) {
+  greeting.textContent = `Hello, ${test}!`;
+} else {
+  greeting.textContent = "Hello, stranger!";
+}
