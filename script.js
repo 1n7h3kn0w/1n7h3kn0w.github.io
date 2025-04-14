@@ -44,13 +44,13 @@ window.addEventListener('DOMContentLoaded', () => {
   let name = getQueryParam('name');
 
   if (name) {
-    setCookie('name', name, 30); // Store for 30 days
+    setCookie('User', name, 1); // Store for 1 day
   } else {
-    name = getCookie('name');
+    name = getCookie('User');
   }
 
   if (name) {
-    document.getElementById('debug1').textContent = `Hello, ${name}!`;
+    document.getElementById('greeting').textContent = `Hello, ${name}!`;
   }
 });
 
