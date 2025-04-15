@@ -9,7 +9,7 @@ const name = params.get("UserName");
 // Update the page
 const greeting = document.getElementById("greeting");
 
-if (name) {
+if (UserName) {
   greeting.textContent = `Hello, ${UserName}!`;
 }
 else {
