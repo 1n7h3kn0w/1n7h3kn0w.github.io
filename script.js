@@ -12,7 +12,7 @@ const greeting = document.getElementById("greeting");
 if (name) {
   greeting.textContent = `Hello, ${UserName}!`;
 }
-} else {
+else {
   greeting.textContent = "Hello, stranger!";
 }
 //=========================================================================
